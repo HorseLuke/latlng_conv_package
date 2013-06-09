@@ -1,0 +1,7 @@
+代码源：
+http://api.amap.com/URI/browser_guide
+手机浏览器地图URI 调用说明 -> 地图标注
+
+高德私有接口：将wgs84转换为gcj02
+
+http://api.amap.com:9090/coordinate/simple?sid=15001&xys=经度,纬度&resType=json&ia=1&rid=[绑定cookies的一个随机数]（可能需要添加key=????，????为申请的apikey）

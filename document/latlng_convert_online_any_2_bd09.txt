@@ -1,0 +1,16 @@
+代码源：http://developer.baidu.com/map/jsdemo.htm#a5_1
+地图示例->坐标换算
+
+
+url接口如下：
+http://api.map.baidu.com/ag/coord/convert?from=[@from]&to=4&x=[@lng]&y=[@lat]&callback=BMap.Convertor.[@callbackName]&mode=[@mode]&ie=utf-8&oue=1&res=api&fromproduct=jsapi
+
+	from 和 to的含义值：
+		0：GPS坐标系类型
+		2：Google 坐标系类型(gcj-02)
+		4：Baidu 坐标系类型
+
+	mode等于1时，为批量转换，貌似一次最多20个。x和y此时需以逗号分割，比如：
+	http://api.map.baidu.com/ag/coord/convert?from=0&to=4&x=100,101&y=3,10&callback=BMap.Convertor.cbk_7789&mode=1&ie=utf-8&oue=1&res=api
+
+	fromproduct=jsapi为baidu map api参数

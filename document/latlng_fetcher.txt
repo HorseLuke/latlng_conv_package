@@ -1,0 +1,13 @@
+gcj02坐标（高德坐标）获取：
+http://api.amap.com/Javascript/example
+地图工具 -> 单击地图获取地图坐标
+
+
+百度坐标获取：
+http://api.map.baidu.com/lbsapi/getpoint/index.html
+
+
+wgs84坐标获取：
+请使用http://www.openlayers.org/ 自行构造一个
+（demo：https://github.com/HorseLuke/satellite_map_viewer ）
+
