@@ -80,9 +80,10 @@ class latlng_conv_wgs84_2_gcj02{
 	 * @param float|array $lat wgs84坐标系的纬度、或者array('lat'=>lat, 'lng'=>lng)
 	 * @param float $lng wgs84坐标系的经度
 	 * @param int $wg_heit wgs84坐标系的高度。缺省为0
+	 * @param int $random 输出的中间量需要random混淆？默认为0，表示跟随配置；-1表示强制禁用random混淆；其余数值表示强制启用random混淆
 	 * @return array 转换后的gcj02坐标(高德坐标系)。格式array('lat'=>lat, 'lng'=>lng)
 	 */
-	static public function conv($lat, $lng = 0, $wg_heit = 0){
+	static public function conv($lat, $lng = 0, $wg_heit = 0, $random = 0){
 		if(is_array($lat)){
 			$lng = isset($lat['lng']) ? $lat['lng'] : 0;
 			$lat = isset($lat['lat']) ? $lat['lat'] : 0;
@@ -107,9 +108,14 @@ class latlng_conv_wgs84_2_gcj02{
 		$x_add = $x_add + $h_add * 0.001 /* + self::yj_sin2($wg_time*self::pi_div(180)) */;
 		$y_add = $y_add + $h_add * 0.001 /* + self::yj_sin2($wg_time*self::pi_div(180)) */;			
 		
-		if(false != self::$conf_random){
+		if(0 == $random){
+			if(false != self::$conf_random){
+				$x_add += self::random_yj();
+				$y_add += self::random_yj();			
+			}
+		}elseif($random != -1){
 			$x_add += self::random_yj();
-			$y_add += self::random_yj();			
+			$y_add += self::random_yj();		
 		}
 		
 		return array(

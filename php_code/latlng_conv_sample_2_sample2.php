@@ -3,7 +3,7 @@
  * latlng转换器：从sample到sample2
  * 这是一个示例转换器，必须实现如下内容：
  *  - 类名必须为latlng_conv_[from]_2_[to]。表示从from转换到to
- *  - 必须包含conv方法。参数名必须依次为$lat, $lng。其中$lat可以接受数组，格式必须为array('lat'=>lat, 'lng'=>lng)
+ *  - 必须包含conv方法。参数名前两者必须依次为$lat, $lng。其中$lat可以接受数组，格式必须为array('lat'=>lat, 'lng'=>lng)
  *  - 返回格式必须为：array('lat'=>lat, 'lng'=>lng)
  *  
  * @author hl
