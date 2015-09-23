@@ -15,3 +15,8 @@ latlng_conv_package
 代码参考众多人的代码，在此致谢。参考来源请见注释。
 
 Licensed under the Apache License, Version 2.0 (the "License")
+
+
+觉得好用？就用支付宝扫一扫来打赏和捐助吧！
+
+![支付宝打赏捐助二维码](http://7xlz3z.com1.z0.glb.clouddn.com/img/git/apavqmok7au6ummhae.png)
